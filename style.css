@@ -1,0 +1,174 @@
+body {
+
+  background-image: url(assets/pictures/plytka.png);
+  background-size: 100px;
+  background-color: rgb(206, 206, 204);
+  margin: 0;
+  padding: 0;
+}
+
+.timer {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 80px;
+  border-radius: 5px;
+  padding: 5px 5px;
+  background-color: black;
+}
+
+
+
+.card {
+  background-color: rgba(0, 0, 0, 0);
+  width: 170px;
+  height: 170px;
+  border: 0;
+  margin: 5px;
+
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.front,
+.back {
+  border: 0;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  position: absolute;
+  box-sizing: content-box;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+
+}
+
+.timer {
+  width: 80px;
+
+}
+
+.front {
+  background-color: rgb(248, 147, 69);
+  box-shadow: 5px 5px 1px rgb(101, 39, 18), inset -4px -4px 5px 0px rgb(119, 70, 32), inset 2px 2px 5px 0px rgb(255, 187, 70);
+  background-repeat: round;
+  transform: rotateY(0deg);
+
+}
+
+.back {
+  box-shadow: 5px 5px rgb(90, 65, 65), inset -4px -4px 5px 0px rgb(81, 81, 81), inset 2px 2px 5px 0px rgb(220, 220, 220);
+
+  background-color: rgb(158, 158, 158);
+  transform: rotateY(-180deg);
+
+}
+
+.card.flipped .front {
+
+  transform: rotateY(180deg);
+
+}
+
+.card.flipped .back {
+
+  transform: rotateY(0deg);
+
+}
+
+.matrix {
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 720px;
+  height: 100%;
+  align-items: center;
+
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  padding: 20px;
+  height: 100%;
+  transition: all 1s;
+  align-items: center;
+  z-index: 2;
+}
+
+
+.menubtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 8px;
+  border: 0;
+  background-color: rgb(220, 220, 218);
+  z-index: 100;
+  border-radius: 5px;
+}
+
+.menubtn:hover {
+  filter: brightness(90%);
+
+}
+
+.menu>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 200px;
+  background-color: rgb(255, 175, 70);
+  border-radius: 10px;
+  box-shadow: 5px 5px 1px rgb(101, 69, 27), inset 2px 2px 5px rgb(255, 199, 70), inset -5px -5px 5px rgb(126, 87, 34);
+}
+
+.menu>div>button {
+  background-color: rgb(255, 187, 70);
+  border: 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgb(126, 92, 34);
+  width: 80px;
+}
+
+.end {
+  position: absolute;
+  width: 300px;
+  height: 450px;
+  top: 50%;
+  left: 50%;
+  margin: -225px 0 0 -150px;
+  background-color: rgba(178, 122, 48, 0.6);
+  box-shadow:  inset -5px -5px 5px rgb(126, 87, 34);
+  border-radius: 10px;
+  z-index: 2;
+  display: none;
+
+  
+}
+.end>div:nth-child(2n){
+  font-size: 40px;
+ 
+text-align: center;
+
+}
+.end>div:nth-child(2n-1){
+  font-size: 40px;
+  margin-top: 70px;
+text-align: center;
+
+}
