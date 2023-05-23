@@ -143,6 +143,11 @@ body {
   border-radius: 5px;
   box-shadow: 2px 2px rgb(126, 92, 34);
   width: 80px;
+
+}
+
+.menu>div>button:hover {
+  filter: brightness(70%);
 }
 
 .end {
@@ -153,22 +158,61 @@ body {
   left: 50%;
   margin: -225px 0 0 -150px;
   background-color: rgba(178, 122, 48, 0.6);
-  box-shadow:  inset -5px -5px 5px rgb(126, 87, 34);
+  box-shadow: inset -5px -5px 5px rgb(126, 87, 34);
   border-radius: 10px;
   z-index: 2;
   display: none;
 
-  
-}
-.end>div:nth-child(2n){
-  font-size: 40px;
- 
-text-align: center;
 
 }
-.end>div:nth-child(2n-1){
+
+.end {
+  overflow-y: scroll;
+
+}
+
+.end::-webkit-scrollbar {
+  display: none;
+}
+
+.end>div:nth-child(2n) {
   font-size: 40px;
-  margin-top: 70px;
-text-align: center;
+
+  text-align: center;
+
+}
+
+
+
+.end>table {
+  font-size: 25px;
+  margin: 25px auto;
+}
+
+.end>div>button {
+  background-color: rgb(216, 148, 58, 0.9);
+  border: 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgb(126, 92, 34);
+
+}
+
+.end>div>input {
+  width: 250px;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.end>div>button:hover {
+  filter: brightness(70%);
+}
+
+.end>div:nth-child(2n-1) {
+  font-size: 40px;
+  margin-top: 35px;
+  text-align: center;
 
 }
