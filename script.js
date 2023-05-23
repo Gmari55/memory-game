@@ -8,7 +8,12 @@ let iswork = false;
 let isend = false;
 const divend = document.getElementById('end');
 
-
+function sound() {
+  var audio = new Audio(); 
+  audio.src = 'assets/1.mp3';
+  audio.volume=0.3; 
+  audio.autoplay = true; 
+}
 $("#seven-seg").sevenSeg({ digits: 4, value: `  ` });
 
 function fillArrayWithRandomNumbers() {
@@ -67,6 +72,7 @@ async function flipCard(card) {
     return;
     if(MenuIsOpen)
     return;
+    sound();
   if (!card.classList.contains('flipped')) {
 
     card.classList.toggle('flipped');
@@ -79,18 +85,21 @@ async function flipCard(card) {
       if (lastcard.getAttribute('num') != card.getAttribute('num')) {
         card.classList.toggle('flipped');
         lastcard.classList.toggle('flipped');
-
+        sound();
+        sound();
       }
       lastcard = null;
       checkmatrix();
+     
       stop = false;
       return;
-
+      
     }
-
+    
     lastcard = card;
   }
   stop = false;
+  
 }
 
 async function checkmatrix() {
@@ -106,7 +115,7 @@ async function checkmatrix() {
 
 
 function end() {
-
+  sound();
   ShowScore();
   isend = true;
   iswork = false;
@@ -223,6 +232,7 @@ function openmenu() {
     menu.style.left = "0px"
     iswork = false
   }
+  sound()
 
 }
 
