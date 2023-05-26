@@ -247,7 +247,8 @@ async function modechange(num) {
   openmenu();
   cretecard();
   cleardivend();
-  s = -1;
+  timezero();
+  s = 1;
   m = 0;
   timerid = setInterval('timer()', 1000);
 
@@ -258,26 +259,31 @@ function cleardivend() {
 
 
 }
+function timezero()
+{
+  $("#seven-seg").sevenSeg({ digits: 4, value: `0.00` });
 
+}
 
 async function timer() {
+  time = m + `.`
+  if (s < 10)
+    time += "0";
+  time += s;
+  $("#seven-seg").sevenSeg({ digits: 4, value: `${time}` });
 
   if (iswork)
     s++;
 
-  if (s == 59) {
+  if (s == 60) {
     m++;
     s = 0;
   }
 
 
-  time = m + `.`
-  if (s < 10)
-    time += "0";
-  time += s;
 
 
-  $("#seven-seg").sevenSeg({ digits: 4, value: `${time}` });
+
 
 
 
